@@ -5,21 +5,26 @@ import requests
 from bs4 import BeautifulSoup
 import json, re, csv, os
 from datetime import date
+import os
 
+# ==========  
+# Settings  
 # ==========
-# Settings
-# ==========
-PATH_TO_URLS = "/Users/syedaijahan/Documents/Capstone - Data Processing/job_urls.txt"
-OUTPUT_CSV   = "/Users/syedaijahan/Documents/Capstone - Data Processing/scraped_jobs.csv"
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/537.36 "
-                  "(KHTML, like Gecko) Chrome/120 Safari/537.36"
-}
+# Get the folder where THIS script is located  
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# Use files from this same folder  
+PATH_TO_URLS = os.path.join(BASE_DIR, "job_urls.txt")
+OUTPUT_CSV   = os.path.join(BASE_DIR, "scraped_jobs.csv")
 # ==============================================
 # Helpers: text cleanup + section parsing
 # ==============================================
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0"
+}
+
 WHITELIST_HEADINGS = [
     "responsibilities", "what you will do", "what you'll do", "what you will work on",
     "role", "about the role", "job description", "description",
