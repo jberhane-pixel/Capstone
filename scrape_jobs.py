@@ -17,6 +17,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Use files from this same folder  
 PATH_TO_URLS = os.path.join(BASE_DIR, "job_urls.txt")
 OUTPUT_CSV   = os.path.join(BASE_DIR, "scraped_jobs.csv")
+OUTPUT_JSON  = os.path.join(BASE_DIR, "scraped_jobs.json")
 # ==============================================
 # Helpers: text cleanup + section parsing
 # ==============================================
@@ -330,5 +331,16 @@ if rows:
         for r in rows:
             w.writerow(r)
     print(f"\nSaved {len(rows)} rows → {OUTPUT_CSV}")
+
+
+
+# ==============================================
+# Save JSON
+# ==============================================
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        json.dump(rows, f, ensure_ascii=False, indent=2)
+        print(f"\nSaved {len(rows)} rows → {OUTPUT_JSON}")
+
 else:
     print("\nNo rows scraped. Check URLs or site blocking.")
+    
