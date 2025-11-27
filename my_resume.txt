@@ -1,0 +1,8 @@
+Joab Berhane
+Toronto, ON
+Email: berhanejoab@gmail.com
+
+Experienced engineering student with skills in Python, machine learning, and embedded systems.
+Looking for roles in software engineering, data science, or embedded systems.
+Strong background in sentence-transformers, decision trees, and microcontroller projects (LPC1768).
+Experience with Hydro One teleprotection, AutoCAD schematics, and Excel line tracking.
